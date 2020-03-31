@@ -12,10 +12,72 @@ This project uses the NBA player statistics dataset that was obtained from Kaggl
 * R 3.5.0
 
 ## Required Packages
-
+### Python Packages
+```python
+import pandas as pd
+from pandas import DataFrame
+from sklearn import preprocessing
+from collections import defaultdict
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+from sklearn.feature_selection import RFE
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import ExtraTreesClassifier
+from sklearn import preprocessing
+from collections import defaultdict
+from sklearn.feature_selection import SelectKBest
+from sklearn.feature_selection import chi2
+from sklearn.svm import LinearSVC
+from sklearn.feature_selection import SelectFromModel
+from functools import reduce
+import numpy as np
+from sklearn import model_selection
+from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import Ridge
+from sklearn.linear_model import Lasso
+from sklearn.linear_model import ElasticNet
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.svm import SVR
+from sklearn.metrics import r2_score
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
+from xgboost import XGBRegressor, plot_importance
+from math import sqrt
+from rpy2.robjects.packages import importr
+import rpy2.robjects as robjects
+import rpy2.robjects.packages as rpackages
+from rpy2.robjects.vectors import StrVector
+```
+### R Libraries
+```R
+library(ggplot2)
+library(gridExtra)
+library(grid)
+library(forcats)
+library(magrittr)
+library(dplyr)
+```
 
 ## Analysis Methods Used
+* Linear Regression
+* Ridge Regression
+* Lasso Regression
+* ElasticNet Regression
+* Extreme Gradient Boosting Modeling
+* Feature Selection
+* Graphical Analysis
 
 ## Model Deployment
+The initial linear model results were good, but we wanted to include other models to ensure that we were making the most accurate predictions possible.  Of the five models we considered, the Extreme Gradient Boosting Regression (XGBR) proved to me the most accurate.  We obtained an R2 value of 0.92 for our training subset of data.  This was about a 30% improvement over the other four models used.  
 
 ## Summary of Results
+| Model | R^2 | RMSE |  
+| ----- | ----- | ---- |  
+| Ordinary Least Squares | 0.63 | 4398500 |  
+| Ridge Regression | 0.63 | 4398504 |  
+| Lasso Regression | 0.63 | 4398500 |  
+| ElasticNet Regression | 0.62 | 4432638 |  
+| Extreme Gradient Boosting | 0.92 | 1818766 |  
+
+An R^2 value of 0.92 was observed for the training subset of data.  This was about a 30% improvement over the other four models used.  Also, the root mean square error (RMSE) was also significantly lower with the XGBR model.
