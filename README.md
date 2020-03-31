@@ -83,3 +83,5 @@ The initial linear model results were good, but we wanted to include other model
 An R^2 value of 0.92 was observed for the training subset of data.  This was about a 30% improvement over the other four models used.  Also, the root mean square error (RMSE) was also significantly lower with the XGBR model.
 
 The model was then used to predict the 10 most overpaid and 10 most underpaid players based on their performance statistics.  The following plots indicate those predictions.
+![](player_overpaid_bar.png)
+![](player_underpaid_bar.png)
